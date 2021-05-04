@@ -1,0 +1,90 @@
+<div class="limiter animated fadeInLeft">
+    <div class="container-login100">
+        <div class="wrap-login100 p-t-50 p-b-90">
+            <!-- <form (ngSubmit)="login( f )" #f="ngForm" class="login100-form validate-form flex-sb flex-w">
+
+                <span class="login100-form-title p-b-51">
+                  Login
+              </span>
+
+                <span *ngIf="f.submitted && f.controls['nombre'].errors" class="text-danger animated fadeIn">El nombre de la app es obligatorio</span>
+                <div class="wrap-input100 m-b-16">
+                    <input class="input100" type="text" name="nompre" required placeholder="nombre de app ">
+
+                    <span class="focus-input100"></span>
+                </div>
+
+                <span *ngIf="f.submitted && f.controls['email'].errors" class="text-danger animated fadeIn">El correo es obligatorio</span>
+                <div class="wrap-input100 m-b-16">
+                    <input class="input100" type="text" name="email" required email placeholder="email">
+
+                    <span class="focus-input100"></span>
+                </div>
+
+                <span *ngIf="f.submitted && f.controls['password'].errors" class="text-danger animated fadeIn">La contraseña debe de ser más de 6 letras</span>
+                <div class="wrap-input100 m-b-16" data-validate="Password is required">
+                    <input class="input100" type="passwaord" name="password" minlength="5" placeholder="passwaord" required>
+                    <span class="focus-input100"></span>
+                </div>
+
+
+                <div class="container-login100-form-btn m-t-17">
+                    <button class="login100-form-btn" type="submit">
+                      Ingresar
+                  </button>
+                </div>
+
+            </form> -->
+
+            <span class="login100-form-title p-b-51">
+              Login
+          </span>
+
+            <form [formGroup]="loginForm">
+                <div class="wrap-input100 m-b-16">
+                    <label for="title">Nombre de la Aplicación</label>
+                    <input type="text" id="nombre" placeholder="nombre" class="form-control" formControlName="nombre" />
+
+                    <div style="color:Red;" *ngIf="loginForm.controls['nombre'].errors?.required" class="invalid-feedback">
+                        El nombre es necesario
+                    </div>
+
+                    <!-- <div *ngIf="loginForm.get('nombre').errors && loginForm.get('nombre').dirty" >
+                      <P *ngIf="loginForm.get('nombre').hasError('required')" >Es requerido</P>
+
+                    </div> -->
+
+                    <!-- <span style="color:Red;" ngIf="loginForm.controls['nombre'].touched && loginForm.controls['nombre'].errors?.required">Username is
+                  required.</span> -->
+                </div>
+
+                <div class="wrap-input100 m-b-16">
+                    <label for="description">Correo</label>
+                    <input type="email" placeholder="correo" class="form-control" formControlName="email" />
+
+                    <!-- <span style="color:Red;" ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].errors?.required">Password is
+                required.</span> -->
+                </div>
+
+                <div class="wrap-input100 m-b-16">
+                    <label for="description">Contraseña</label>
+                    <input type="password" placeholder="contraseña" class="form-control" formControlName="password" />
+
+                    <!-- <span style="color:Red;" ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].errors?.required">Password is
+                  required.</span> -->
+                </div>
+
+                <div class="buttons-container center">
+
+                    <div class="container-login100-form-btn m-t-17">
+                        <button class="login100-form-btn" type="submit" (click)="signIn()">
+                    Ingresar
+                </button>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

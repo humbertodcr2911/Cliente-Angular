@@ -1,0 +1,42 @@
+<div class="limiter animated fadeInLeft">
+    <div class="container-login100">
+        <div class="m2">
+            <table class="table caption-top">
+
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre Aplicacion</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Contraseña</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td *ngIf="usuario">{{ usuario.nombreApp }}</td>
+                        <td *ngIf="usuario">{{ usuario.correo }}</td>
+                        <td *ngIf="usuario">{{ usuario.pass }}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <div class="container-login100-form-btn m-t-17">
+                <button class="login100-form-btn" type="submit" (click)="salir()">
+    Regrasar</button>
+            </div>
+
+        </div>
+
+
+        <!-- <div class="top-50 p-t-50 p-b-90">
+
+            <button class="form-btn m-t-17" type="button" class="btn btn-primary" (click)="salir()">Regresar</button>
+        </div> -->
+
+        <!-- <div class="container-login100-form-btn m-t-17">
+            <button class="login100-form-btn" type="submit" (click)="salir()">
+    Regrasar</button>
+        </div> -->
+    </div>
+</div>
